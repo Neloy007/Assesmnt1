@@ -1,0 +1,64 @@
+//Name of the job: Appliance Power Usage Calculator
+
+abstract class Appliance() {
+    abstract fun calculatePowerUsage()
+}
+
+
+     class Fan : Appliance() {
+        override fun calculatePowerUsage() {
+
+
+
+                val hour1 = 16
+                val watts1 = 75
+                val kwh = (watts1*hour1)/1000.0
+                println("Fan consumes $kwh")
+
+
+
+        }
+    }
+
+    class AirConditioner : Appliance() {
+        override fun calculatePowerUsage() {
+
+
+
+                val hour1 = 11
+                val watts1 = 1500
+                val kwh = (watts1*hour1)/1000.0
+                println("AC consumes $kwh")
+
+
+
+        }
+    }
+
+     class LightBulb : Appliance() {
+        override fun calculatePowerUsage() {
+
+
+
+                val hour1 = 13
+                val watts1 = 10
+                val kwh = (watts1*hour1)/1000.0
+                println("Appliance consumes $kwh")
+
+
+
+        }
+    }
+//    fun calculation(var: Int){}
+
+    fun main(args: Array<String>) {
+
+        val obj1 = Fan()
+        obj1.calculatePowerUsage()
+
+        val obj2 = AirConditioner()
+        obj2.calculatePowerUsage()
+
+        val obj3 = LightBulb()
+        obj3.calculatePowerUsage()
+    }
