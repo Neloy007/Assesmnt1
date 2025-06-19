@@ -1,0 +1,53 @@
+//Name of the job: Implement a Secure Bank Account System using Encapsulation and
+//Abstraction in Kotlin
+
+class BankAccount(private var accountNumber: String,private var balance: Double){
+
+
+    fun getBalance(): Double{
+        return balance
+    }
+
+
+//Abstraction
+    fun deposit(amount: Double){
+        if (amount>0){
+            balance += amount
+            println("Successfully Deposited $amount")
+        }
+        else{
+            println("Invalid Deposit Amount.")
+        }
+    }
+
+    fun withdrawal(amount: Double){
+        if (amount<=balance){
+            balance -= amount
+            println("Successfully Withdrawn $amount")
+        }
+        else{
+            println("Invalid Deposit Amount.")
+        }
+    }
+    
+}
+
+
+fun main(args: Array<String>) {
+
+
+
+ //Object1
+    val userOne = BankAccount("1234",2000.0)
+    println("Initial Balance: ${userOne.getBalance()}")
+
+    userOne.deposit(500.0)
+    println("Balance: ${userOne.getBalance()}")
+
+    userOne.withdrawal(300.0)
+    println("Balance: ${userOne.getBalance()}")
+
+
+
+
+}
