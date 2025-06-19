@@ -1,0 +1,55 @@
+//Name of the job: Student Bank App: Manage Student Savings Account using Kotlin Classes
+
+class StudentAccount(private var studentId: String,
+                     private var accountBalance: Double,
+                     private var studentName: String,
+                     private var passwordPin: String){
+
+
+    fun viewBalance(): Double{
+        return accountBalance
+    }
+
+
+
+    fun saveMoney(amount: Double){
+        if (amount>0){
+            accountBalance += amount
+            println("Successfully Deposited $amount")
+        }
+        else{
+            println("Invalid Deposit Amount.")
+        }
+    }
+
+    fun spendMoney(amount: Double){
+        if (amount<=accountBalance){
+            accountBalance -= amount
+            println("Successfully Withdrawn $amount")
+        }
+        else{
+            println("Invalid Deposit Amount.")
+        }
+    }
+}
+
+
+fun main(args: Array<String>) {
+
+
+
+    //Object1
+    val userOne = StudentAccount("1234",2000.0, "Neloy", "3214")
+    println("")
+    println("Initial Balance: ${userOne.viewBalance()}")
+
+    userOne.saveMoney(500.0)
+    println("Balance: ${userOne.viewBalance()}")
+
+    userOne.spendMoney(300.0)
+    println("Balance: ${userOne.viewBalance()}")
+
+
+
+
+}
